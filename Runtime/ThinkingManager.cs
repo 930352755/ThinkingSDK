@@ -7,7 +7,6 @@ namespace RewardCardSDK.Thinking
 {
     public class ThinkingManager
     {
-
         private static ThinkingManager instance = null;
         public static ThinkingManager Instance
         {
@@ -21,7 +20,6 @@ namespace RewardCardSDK.Thinking
             }
         }
         private ThinkingManager() { }
-
         /// <summary>
         /// 数数初始化
         /// </summary>
@@ -31,7 +29,7 @@ namespace RewardCardSDK.Thinking
         /// <param name="dynamicSuperProperties">这个是每个点自带的统一信息，可空</param>
         public void Initial(string appId, string serverUrl, string userID = "", IDynamicSuperProperties dynamicSuperProperties = null)
         {
-            Debug.LogError("数数开始初始化"+Time.time);
+            Debug.Log(string.Format("数数开始初始化:---------数数的Key：{0}\t数数上报地址：{1}--------------------", appId, serverUrl));
             // 手动初始化（动态挂载 ThinkingAnalyticsAPI 脚本）
             new GameObject("ThinkingAnalytics", typeof(ThinkingAnalyticsAPI));
             // 设置实例参数
@@ -52,20 +50,17 @@ namespace RewardCardSDK.Thinking
                 ThinkingAnalyticsAPI.Login(userID);
             }
             ThinkingAnalyticsAPI.EnableThirdPartySharing(ThinkingAnalytics.Utils.TAThirdPartyShareType.ADJUST);
-            Debug.LogError("数数初始化完成" + Time.time);
+            Debug.Log("数数初始化完成---------------------------------------------------------------------------");
         }
-
         /// <summary>
         /// 自动去打一些点。
         /// </summary>
         private void EnableAutoTrack()
         {
-            ThinkingAnalyticsAPI.EnableAutoTrack(AUTO_TRACK_EVENTS.ALL);
 #if UNITY_ANDROID
             //TODO IOS需要延迟开启自动
             ThinkingAnalyticsAPI.EnableAutoTrack(AUTO_TRACK_EVENTS.ALL);
 #endif
-
         }
 
     }
