@@ -1,4 +1,18 @@
 {
     "name": "com.unity.thinkingsdk",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "displayName":"ThinkingSDK",
+    "author": 
+    {
+        "name": "张新宇"
+    },
+
+    "samples":[
+    {
+        "displayName":"samples",
+        "description":"这是一个案例",
+        "path":"Samples/ThinkInitial"
+    }
+    ]
+
 }
