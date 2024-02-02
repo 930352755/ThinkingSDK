@@ -1,20 +1,11 @@
 {
-    "name": "com.unity.thinkingsdk",
+    "name": "com.unity.debugsystem",
     "version": "1.0.0",
-    "displayName":"ThinkingSDK",
-    "description": "完整的数数SDK接入到游戏中，只需要去调用初始化就行了",
+    "displayName": "DebugSystem",
+    "description": "Debug模式下看log工具以及测试所用工具",
 
-    "author": 
-    {
+    "author": {
         "name": "KKXX"
-    },
-
-    "samples":[
-    {
-        "displayName":"samples",
-        "description":"这是一个案例",
-        "path":"Samples~/ThinkInitial"
     }
-    ]
-
+    
 }
